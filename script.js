@@ -4,6 +4,7 @@
     // ===== PROJECT DATA =====
     const projects = {
       ecommerce: {
+        image: 'food.png',
         emoji: '🍽️',
         bg: 'linear-gradient(135deg,#1a0a2e,#2e0a1a)',
         title: 'Online Food Ordering Platform',
@@ -24,9 +25,10 @@
         live: '#'
       },
       sms: {
+        image: 'student.png',
         emoji: '📝',
         bg: 'linear-gradient(135deg,#0a1a2e,#0a2e1a)',
-        screenshots: ['sms-screenshot.png'],//apni image add
+        screenshots: ['sms-screenshot.png'],
         title: 'Student Complaint Management System',
         tags: ['Python', 'MySQL'],
         desc: 'A desktop-based Student Management System developed using Java and MySQL. The application allows administrators to add new students, update existing records, delete students, and search by roll number or name. It uses JDBC for database connectivity and Java Swing for the graphical user interface. Great project for learning database operations and OOP concepts.',
@@ -40,9 +42,10 @@
         live: null
       },
       weather: {
+        image: 'weather.png',
         emoji: '🌤️',
         bg: 'linear-gradient(135deg,#0a1e2e,#1a2e0a)',
-        screenshots: ['weather-screenshot.png'],//apni image yaha per add karo
+        screenshots: ['weather-screenshot.png'],
         title: 'Weather App',
         tags: ['Python', 'API', 'OpenWeather', 'Tkinter'],
         desc: 'A weather application built with Python that fetches real-time weather data for any city in the world using the OpenWeather API. The app displays temperature, humidity, wind speed, and weather conditions with a clean GUI built using Tkinter. This project taught me how to work with REST APIs, handle JSON responses, and build Python GUIs.',
@@ -56,17 +59,26 @@
         live: '#'
       },
       todo: {
-        emoji: '✅',
+        image: 'smart.png',
         bg: 'linear-gradient(135deg,#2e1a0a,#0a2e28)',
-        screenshots: ['todo-screenshot.png'],//add your image
-        title: 'To-Do List App',
-        tags: ['HTML', 'CSS', 'JavaScript', 'LocalStorage'],
-        desc: 'A minimal and clean to-do list web application built with vanilla HTML, CSS, and JavaScript. Users can add tasks, mark them as complete, delete them, and filter between active and completed tasks. All tasks are saved to the browser\'s localStorage so they persist after page refresh. A great beginner-friendly project that covers fundamental JS concepts.',
+        screenshots: [
+          's_image1.png',
+          's_image2.png',
+          's_image4.png',
+          's_image5.png',
+          's_image6.png',
+          's_image7.png',
+          's_image8.png',
+          's_image9.png',
+        ],
+        title: 'Smart Attendance Management System',
+        tags: ['HTML', 'CSS', 'JavaScript', 'LocalStorage', 'Python', 'Flask', 'SQLite', 'QR Code Library', 'Werkzeug Security'],
+        desc: 'A modern and secure attendance management web application buit using Python Flask, SQLite, HTML, CSS and Javascript.  The system provides role-based access for admin, Teacher, and Student users. Teacher can mark attendance using Normal Attendance, OTP Verification , and OR Code Verification, While students can view their attendance records and reports. The application also includes class management, student enrollment, attendance analytics, and secure authentication.',
         meta: [
-          { label: 'Type', val: 'Frontend Web App' },
+          { label: 'Type', val: 'attendance Management Web Application' },
           { label: 'Status', val: '✅ Completed' },
-          { label: 'Duration', val: '3 days' },
-          { label: 'Features', val: 'Add / Delete / Complete tasks, Filter, LocalStorage' },
+          { label: 'Duration', val: '15 Days' },
+          { label: 'Features', val: 'Admin Dashboard, Teacher & Student Management, Class Management, Student Enrollment, Normal Attendance, OTP Attendance, QR Code Attendance, ATTendance Reports, Attendaance Analytics, Secure Login System, Password Hashing, Role-Based Access Control, SQLite Database, OR Code Generation, Local Storage of Attendance Records' },
         ],
         github: '#',
         live: '#'
@@ -79,7 +91,12 @@
 
      // Modal top section
      document.getElementById('mThumb').style.background = p.bg;
-     document.getElementById('mThumb').textContent = p.emoji;
+     if (p.image) {
+    document.getElementById('mThumb').innerHTML =
+        `<img src="${p.image}" alt="${p.title}" class="modal-hero-img">`;
+      } else {
+    document.getElementById('mThumb').textContent = p.emoji;
+     }
 
     // Remove old screenshot section
     const existingShot = document.getElementById('mScreenshot');
