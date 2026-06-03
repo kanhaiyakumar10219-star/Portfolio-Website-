@@ -58,7 +58,7 @@
         github: '#',
         live: '#'
       },
-      todo: {
+      smart: {
         image: 'smart.png',
         bg: 'linear-gradient(135deg,#2e1a0a,#0a2e28)',
         screenshots: [
@@ -80,8 +80,8 @@
           { label: 'Duration', val: '15 Days' },
           { label: 'Features', val: 'Admin Dashboard, Teacher & Student Management, Class Management, Student Enrollment, Normal Attendance, OTP Attendance, QR Code Attendance, ATTendance Reports, Attendaance Analytics, Secure Login System, Password Hashing, Role-Based Access Control, SQLite Database, OR Code Generation, Local Storage of Attendance Records' },
         ],
-        github: '#',
-        live: '#'
+        github: 'https://github.com/kanhaiyakumar10219-star/smart-attendance-system',
+        live: 'https://smart-attendance-system-production-69ca.up.railway.app',
       }
     };
 
