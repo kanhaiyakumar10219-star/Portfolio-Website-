@@ -13,8 +13,16 @@
 <body>
 
   <!-- NAVBAR: -->
+
+<div id="loader">
+  <div class="loader-circle"></div>
+  <p>Loading Portfolio...</p>
+</div>
   <nav>
     <div class="nav-name"><span>Kanhaiya Kumar</span> </div>
+    <div class="menu-toggle" id="menuToggle">
+     <i class="fas fa-bars"></i>
+   </div>
     <ul class="nav-links">
       <li><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
@@ -33,9 +41,8 @@
         <div class="avatar-placeholder" style="display:none;">
           <i class="fas fa-user-circle"></i>
           <p>
-            <img src="image.jpg" alt="Kanhaiya Kumar"
-          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-          </p>
+            Profile image
+         </p>
         </div>
       </div>
       <div class="img-deco"></div>
@@ -45,7 +52,11 @@
       <div class="tag"><i class="fas fa-circle" style="font-size:0.5rem; animation: pulse 2s infinite;"></i> </div>
       <h1>Hi, I'm <span class="highlight">Kanhaiya</span><br/><span class="highlight">Kumar</span></h1>
       <p class="subtitle">&lt; Frontend Web Developer &amp; BCA Student /&gt;</p>
-      <p> </p>
+      <p> 
+       Passionate BCA student focused on Frontend Development,
+       JavaScript and Python. I enjoy building modern and
+       responsive web applications.
+     </p>
       <div class="home-btns">
         <a href="#projects" class="btn btn-primary"><i class="fas fa-rocket"></i> View Projects</a>
         <a href="#contact" class="btn btn-outline"><i class="fas fa-paper-plane"></i> Let's Talk</a>
@@ -392,7 +403,7 @@
         <a href="https://github.com/kanhaiyakumar10219-star" target="_blank" class="social-btn"><i class="fab fa-github"></i> GitHub</a>
         <a href="https://linkedin.com/in/kanhaiya-kumar-a15982382" target="_blank" class="social-btn"><i class="fab fa-linkedin"></i> LinkedIn</a>
         <a href="https://t.me/Kanhaiya_8" target="_blank" class="social-btn"><i class="fab fa-telegram"></i> Telegram</a>
-        <a href="https://twitter.com/" target="_blank" class="social-btn"><i class="fab fa-x-twitter"></i> X</a>
+        <a href="https://x.com/Kanhaiy53037906" target="_blank" class="social-btn"><i class="fab fa-x-twitter"></i> X</a>
         <a href="https://wa.me/918797434344" target="_blank" class="social-btn"><i class="fab fa-whatsapp"></i> WhatsApp</a>
       </div>
     </div>
@@ -422,6 +433,10 @@
     </div>
   </section>
 
+    <button id="backToTop">
+     <i class="fas fa-arrow-up"></i>
+  </button>
+
   <!-- FOOTER -->
   <footer>
     <p>Designed &amp; Built with <span>❤</span> by <span>Kanhaiya Kumar</span> &copy; 2026</p>
@@ -445,6 +460,15 @@
       <span class="image-viewer-close">&times;</span>
       <img id="viewerImg" src="" alt="Full Screenshot">
       </div>
+
+      <div id="successPopup">
+  <div class="popup-box">
+    <i class="fas fa-check-circle"></i>
+    <h3>Message Sent!</h3>
+    <p>Thank you for contacting me.</p>
+    <button onclick="closePopup()">OK</button>
+  </div>
+ </div>
 
  <script src="script.js"></script>
 </body>

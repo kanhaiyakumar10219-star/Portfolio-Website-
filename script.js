@@ -31,7 +31,8 @@
         screenshots: ['sms-screenshot.png'],
         title: 'Student Complaint Management System',
         tags: ['Python', 'MySQL'],
-        desc: 'A desktop-based Student Management System developed using Java and MySQL. The application allows administrators to add new students, update existing records, delete students, and search by roll number or name. It uses JDBC for database connectivity and Java Swing for the graphical user interface. Great project for learning database operations and OOP concepts.',
+        desc: 'A desktop-based Student Complaint Management System developed using Python and MySQL. The application allows students to submit complaints and enables administrators to manage, update, resolve, and track complaint records efficiently. It provides features such as complaint registration, status tracking, complaint history, and secure data storage using a MySQL database. The graphical user interface is built with Python, making the system easy to use and user-friendly. This project helped me gain practical experience in database management, CRUD operations, and object-oriented programming concepts.',
+
         meta: [
           { label: 'Type', val: 'Desktop Application' },
           { label: 'Status', val: '✅ Completed' },
@@ -234,6 +235,7 @@
         result.className = 'success';
         result.innerHTML = '✅ Message sent successfully! ';
         result.style.display = 'block';
+        document.getElementById('successPopup').classList.add('show');
         document.getElementById('cname').value = '';
         document.getElementById('cemail').value = '';
         document.getElementById('cmsg').value = '';
@@ -314,3 +316,46 @@
     document.getElementById('imageViewer').classList.remove('open');
     document.getElementById('viewerImg').src = '';
     }
+
+    // === Mobile Menu ===
+const menuToggle = document.getElementById('menuToggle');
+const navLinks = document.querySelector('.nav-links');
+
+if (menuToggle) {
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  });
+}
+
+// ===== BACK TO TOP =====
+const backToTop = document.getElementById('backToTop');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 400) {
+    backToTop.classList.add('show');
+  } else {
+    backToTop.classList.remove('show');
+  }
+});
+
+backToTop.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
+
+// ===== SUCCESS POPUP =====
+function closePopup() {
+  document.getElementById('successPopup').classList.remove('show');
+}
+
+// ===== LOADER =====
+window.addEventListener('load', () => {
+  const loader = document.getElementById('loader');
+
+  setTimeout(() => {
+    loader.style.display = 'none';
+  }, 800);
+});
+
