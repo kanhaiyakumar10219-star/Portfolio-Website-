@@ -48,15 +48,15 @@
         bg: 'linear-gradient(135deg,#0a1e2e,#1a2e0a)',
         screenshots: ['weather-screenshot.png'],
         title: 'Weather App',
-        tags: ['Python', 'API', 'OpenWeather', 'Tkinter'],
-        desc: 'A weather application built with Python that fetches real-time weather data for any city in the world using the OpenWeather API. The app displays temperature, humidity, wind speed, and weather conditions with a clean GUI built using Tkinter. This project taught me how to work with REST APIs, handle JSON responses, and build Python GUIs.',
+        tags: ['HTML', 'CSS', 'JavaScript', 'Chart.js', 'OpenWeatherMAp API', 'OpenWeather Geocoding APT', 'OpenWeather Air Pollution API'],
+        desc: 'A professional weather forecasting web application developed using HTML, CSS, and JavaScript. It provides real-time weather information for cities around the world through the OpenWeather API. Users can view current temperature, humidity, wind speed, air quality index(AQI), hourly forecasts, and 5-day weather predictions. The application also includes weather analytics charts, city comparison, favorite cities, search history, geolocation support, and dark/light mode. Through this project, I gained hands-on experience in API interation, asynchronous JavaScript, local storage management, data visualization, and responsive web design.',
         meta: [
-          { label: 'Type', val: 'Python App' },
+          { label: 'Type', val: 'Web Application' },
           { label: 'Status', val: '✅ Completed' },
-          { label: 'Duration', val: '1 week' },
-          { label: 'Features', val: 'Real-time data, City search, Weather icons, Temp units' },
+          { label: 'Duration', val: '2 week' },
+          { label: 'Features', val: 'Real-time weather updates, AQI monitoring, hourly and 5-day forecasts, weather analytics charts, city search with suggestions, city comparison, favorite cities, search history, geolocation support, dark/light mode, auto-refresh functionality, weather alerts, dynamic weather backgrounds, and fully responisve design.' },
         ],
-        github: '#',
+        github: 'https://github.com/kanhaiyakumar10219-star/weather-app',
         live: '#'
       },
       smart: {
