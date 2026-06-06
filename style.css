@@ -126,15 +126,6 @@
     .avatar-placeholder i { font-size: 80px; color: var(--accent); opacity: 0.5; }
     .avatar-placeholder p { color: var(--muted); font-size: 0.8rem; }
 
-    .img-deco {
-      position: absolute;
-      width: 300px; height: 370px;
-      border: 2px solid var(--accent2);
-      border-radius: 16px;
-      top: 14px; left: 14px;
-      opacity: 0.25; z-index: -1;
-    }
-
     .home-text {
       flex: 1;
       order: 1; /* text second = RIGHT */
@@ -305,12 +296,24 @@
     .skills-header { text-align: center; margin-bottom: 56px; }
 
     .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-      gap: 18px;
-      max-width: 860px;
-      margin: 0 auto;
-    }
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     gap: 18px;
+     max-width: 1200px;
+     margin: 0 auto;
+   }
+
+   @media (max-width: 992px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 580px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
     .skill-item {
       background: var(--card);
