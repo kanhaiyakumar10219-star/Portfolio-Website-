@@ -4,7 +4,7 @@
     // ===== PROJECT DATA =====
     const projects = {
       ecommerce: {
-        image: 'food.png',
+        image: 'food.webp',
         emoji: '🍽️',
         bg: 'linear-gradient(135deg,#1a0a2e,#2e0a1a)',
         title: 'Online Food Ordering Platform',
@@ -25,7 +25,7 @@
         live: '#'
       },
       sms: {
-        image: 'student.png',
+        image: 'student.webp',
         emoji: '📝',
         bg: 'linear-gradient(135deg,#0a1a2e,#0a2e1a)',
         screenshots: ['sms-screenshot.png'],
@@ -43,7 +43,7 @@
         live: null
       },
       weather: {
-        image: 'weather.png',
+        image: 'weather.webp',
         emoji: '🌤️',
         bg: 'linear-gradient(135deg,#0a1e2e,#1a2e0a)',
         screenshots: ['weather-screenshot.png'],
@@ -60,17 +60,17 @@
         live: '#'
       },
       smart: {
-        image: 'smart.png',
+        image: 'smart.webp',
         bg: 'linear-gradient(135deg,#2e1a0a,#0a2e28)',
         screenshots: [
-          's_image1.png',
-          's_image2.png',
-          's_image4.png',
-          's_image5.png',
-          's_image6.png',
-          's_image7.png',
-          's_image8.png',
-          's_image9.png',
+          's_image1.webp',
+          's_image2.webp',
+          's_image3.webp',
+          's_image4.webp',
+          's_image5.webp',
+          's_image6.webp',
+          's_image7.webp',
+          's_image8.webp',
         ],
         title: 'Smart Attendance Management System',
         tags: ['HTML', 'CSS', 'JavaScript', 'LocalStorage', 'Python', 'Flask', 'SQLite', 'QR Code Library', 'Werkzeug Security'],
@@ -141,13 +141,15 @@
 
       <div class="screenshot-grid">
         ${p.screenshots.map(img => `
-          <img 
-            src="${img}" 
-            alt="${p.title} Screenshot"
-            onclick="openImageViewer('${img}')"
-            onerror="this.style.display='none';"
-          >
-        `).join('')}
+         <img 
+           src="${img}"
+           loading="lazy"
+           decoding="async"
+           alt="${p.title} Screenshot"
+           onclick="openImageViewer('${img}')"
+           onerror="this.style.display='none';"
+           >
+          `).join('')}
       </div>
     `;
 
@@ -279,7 +281,7 @@
 
     // ===== RESUME CHECK =====
     document.getElementById('resumeBtn').addEventListener('click', function(e) {
-      fetch('resume.pdf', { method: 'HEAD' })
+      fetch('Resume.pdf', { method: 'HEAD' })
         .then(res => {
           if (!res.ok) {
             e.preventDefault();
@@ -352,10 +354,6 @@ function closePopup() {
 
 // ===== LOADER =====
 window.addEventListener('load', () => {
-  const loader = document.getElementById('loader');
-
-  setTimeout(() => {
-    loader.style.display = 'none';
-  }, 800);
+  document.getElementById('loader').style.display = 'none';
 });
 

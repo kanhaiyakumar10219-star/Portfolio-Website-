@@ -52,7 +52,7 @@
       display: flex; justify-content: space-between; align-items: center;
       padding: 16px 60px;
       background: rgba(6,6,18,0.88);
-      backdrop-filter: blur(18px);
+      backdrop-filter: blur(8px);
       border-bottom: 1px solid rgba(0,245,160,0.1);
     }
 
@@ -457,7 +457,7 @@
     .modal-overlay {
       position: fixed; inset: 0; z-index: 2000;
       background: rgba(6,6,18,0.92);
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(4px);
       display: none; align-items: center; justify-content: center;
       padding: 20px;
     }
@@ -964,4 +964,22 @@
   color: #060612;
   font-weight: 700;
   cursor: pointer;
+}
+
+/* == Mobile Optimazation ==*/
+   @media (max-width: 580px) {
+  section {
+    min-height: auto;
+    padding: 85px 18px 50px;
+  }
+
+  body::after {
+    display: none;
+  }
+
+  .fade-in {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
