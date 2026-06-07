@@ -357,3 +357,24 @@ window.addEventListener('load', () => {
   document.getElementById('loader').style.display = 'none';
 });
 
+// Education & Certification side animation
+const educationSection = document.querySelector('#education');
+const eduColumn = document.querySelector('.edu-column');
+const certColumn = document.querySelector('.cert-column');
+
+if (educationSection && eduColumn && certColumn) {
+  const eduCertObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        eduColumn.classList.add('show-edu');
+
+        setTimeout(() => {
+          certColumn.classList.add('show-cert');
+        }, 200);
+      }
+    });
+  }, { threshold: 0.25 });
+
+  eduCertObserver.observe(educationSection);
+}
+

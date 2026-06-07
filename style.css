@@ -1062,3 +1062,23 @@
     gap: 35px;
   }
 }
+
+/* Education & Certification side animation */
+.edu-column {
+  opacity: 0;
+  transform: translateX(-80px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.cert-column {
+  opacity: 0;
+  transform: translateX(80px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.edu-column.show-edu,
+.cert-column.show-cert {
+  opacity: 1;
+  transform: translateX(0);
+}
+
