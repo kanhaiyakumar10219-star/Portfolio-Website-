@@ -57,7 +57,7 @@
           { label: 'Features', val: 'Real-time weather updates, AQI monitoring, hourly and 5-day forecasts, weather analytics charts, city search with suggestions, city comparison, favorite cities, search history, geolocation support, dark/light mode, auto-refresh functionality, weather alerts, dynamic weather backgrounds, and fully responisve design.' },
         ],
         github: 'https://github.com/kanhaiyakumar10219-star/weather-app',
-        live: '#'
+        live: 'https://weather-app-peach-kappa-88.vercel.app/'
       },
       smart: {
         image: 'smart.webp',
