@@ -375,3 +375,63 @@ if (educationSection && eduColumn && certColumn) {
   eduCertObserver.observe(educationSection);
 }
 
+// ===== ADVANCED SECTION ANIMATION =====
+const animatedElements = document.querySelectorAll(
+  'section, .edu-card, .cert-card, .skill-item, .project-card, .stat-box, .contact-item, .social-btn, .contact-form'
+);
+
+animatedElements.forEach((el, index) => {
+  el.classList.add('reveal');
+
+  if (el.classList.contains('edu-card') || el.classList.contains('contact-item')) {
+    el.classList.add('reveal-left');
+  }
+
+  if (el.classList.contains('cert-card') || el.classList.contains('project-card')) {
+    el.classList.add('reveal-right');
+  }
+
+  if (el.classList.contains('skill-item') || el.classList.contains('stat-box')) {
+    el.classList.add('reveal-zoom');
+  }
+
+  el.style.transitionDelay = `${(index % 6) * 0.08}s`;
+});
+
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('active');
+    }
+  });
+}, {
+  threshold: 0.15
+});
+
+animatedElements.forEach(el => revealObserver.observe(el));
+
+
+// ===== 3D MOUSE TILT EFFECT =====
+const tiltCards = document.querySelectorAll(
+  '.edu-card, .cert-card, .skill-item, .project-card, .stat-box'
+);
+
+tiltCards.forEach(card => {
+  card.addEventListener('mousemove', (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    const rotateX = ((y - centerY) / centerY) * -6;
+    const rotateY = ((x - centerX) / centerX) * 6;
+
+    card.style.transform = `translateY(-8px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+  });
+
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = '';
+  });
+});

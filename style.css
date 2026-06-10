@@ -1082,3 +1082,86 @@
   transform: translateX(0);
 }
 
+/* ===== ADVANCED SCROLL ANIMATION ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(45px) scale(0.96);
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.reveal-left {
+  transform: translateX(-70px);
+}
+
+.reveal-right {
+  transform: translateX(70px);
+}
+
+.reveal-left.active,
+.reveal-right.active {
+  transform: translateX(0);
+}
+
+.reveal-zoom {
+  transform: scale(0.85);
+}
+
+.reveal-zoom.active {
+  transform: scale(1);
+}
+
+/* Card hover 3D effect */
+.edu-card,
+.cert-card,
+.skill-item,
+.project-card,
+.stat-box,
+.contact-form {
+  transform-style: preserve-3d;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.edu-card:hover,
+.cert-card:hover,
+.skill-item:hover,
+.project-card:hover,
+.stat-box:hover,
+.contact-form:hover {
+  transform: translateY(-8px) rotateX(4deg) rotateY(-4deg);
+  box-shadow: 0 18px 45px rgba(0, 245, 160, 0.18);
+}
+
+/* Floating home image */
+.home-image .img-wrapper {
+  animation: floatImage 4s ease-in-out infinite;
+}
+
+@keyframes floatImage {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+/* Navbar slide */
+nav {
+  animation: navSlide 0.8s ease forwards;
+}
+
+@keyframes navSlide {
+  from {
+    transform: translateY(-80px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
