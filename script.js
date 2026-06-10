@@ -5,7 +5,6 @@
     const projects = {
       ecommerce: {
         image: 'food.webp',
-        emoji: '🍽️',
         bg: 'linear-gradient(135deg,#1a0a2e,#2e0a1a)',
         title: 'Online Food Ordering Platform',
         screenshots: [
@@ -26,7 +25,6 @@
       },
       sms: {
         image: 'student.webp',
-        emoji: '📝',
         bg: 'linear-gradient(135deg,#0a1a2e,#0a2e1a)',
         screenshots: ['sms-screenshot.png'],
         title: 'Student Complaint Management System',
@@ -44,7 +42,6 @@
       },
       weather: {
         image: 'weather.webp',
-        emoji: '🌤️',
         bg: 'linear-gradient(135deg,#0a1e2e,#1a2e0a)',
         screenshots: ['weather-screenshot.png'],
         title: 'Weather App',
