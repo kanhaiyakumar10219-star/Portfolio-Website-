@@ -1165,3 +1165,70 @@ nav {
     opacity: 1;
   }
 }
+
+/* Visitor Counter */
+.visitor-box {
+  color: var(--accent);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.8rem;
+  border: 1px solid rgba(0,245,160,0.25);
+  padding: 7px 12px;
+  border-radius: 8px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+/* Resume Preview */
+.resume-preview {
+  margin-left: 12px;
+}
+
+/* Page Transition Animation */
+.page-transition {
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  z-index: 9998;
+  pointer-events: none;
+  animation: pageOpen 1s ease forwards;
+}
+
+@keyframes pageOpen {
+  0% { transform: scaleY(1); transform-origin: top; }
+  100% { transform: scaleY(0); transform-origin: top; }
+}
+
+
+
+/* 3D Project Card Tilt */
+.project-card,
+.skill-item,
+.edu-card,
+.cert-card {
+  transform-style: preserve-3d;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project-card:hover,
+.skill-item:hover,
+.edu-card:hover,
+.cert-card:hover {
+  box-shadow: 0 18px 45px rgba(0,245,160,0.18);
+}
+
+/* Mobile Fix */
+@media (max-width: 580px) {
+  .visitor-box {
+    display: none;
+  }
+
+  .resume-preview {
+    margin-left: 0;
+    margin-top: 12px;
+  }
+
+  .floating-icons {
+    display: none;
+  }
+}

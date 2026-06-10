@@ -411,14 +411,32 @@ const revealObserver = new IntersectionObserver((entries) => {
 animatedElements.forEach(el => revealObserver.observe(el));
 
 
-// ===== 3D MOUSE TILT EFFECT =====
-const tiltCards = document.querySelectorAll(
-  '.edu-card, .cert-card, .skill-item, .project-card, .stat-box'
+// ===== VISITOR COUNTER =====
+let visitors = localStorage.getItem('portfolioVisitors');
+
+if (!visitors) {
+  visitors = 1;
+} else {
+  visitors = Number(visitors) + 1;
+}
+
+localStorage.setItem('portfolioVisitors', visitors);
+
+const visitorCount = document.getElementById('visitorCount');
+if (visitorCount) {
+  visitorCount.textContent = visitors;
+}
+
+
+// ===== 3D TILT EFFECT =====
+const tiltItems = document.querySelectorAll(
+  '.project-card, .skill-item, .edu-card, .cert-card'
 );
 
-tiltCards.forEach(card => {
-  card.addEventListener('mousemove', (e) => {
-    const rect = card.getBoundingClientRect();
+tiltItems.forEach(item => {
+  item.addEventListener('mousemove', (e) => {
+    const rect = item.getBoundingClientRect();
+
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
 
@@ -428,10 +446,18 @@ tiltCards.forEach(card => {
     const rotateX = ((y - centerY) / centerY) * -6;
     const rotateY = ((x - centerX) / centerX) * 6;
 
-    card.style.transform = `translateY(-8px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    item.style.transform = `translateY(-8px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
   });
 
-  card.addEventListener('mouseleave', () => {
-    card.style.transform = '';
+  item.addEventListener('mouseleave', () => {
+    item.style.transform = '';
   });
 });
+
+// ===== REAL VISITOR COUNTER =====
+fetch('https://api.countapi.xyz/hit/kanhaiya-portfolio/visits')
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById('visitorCount').innerText = data.value;
+  })
+  .catch(err => console.log(err));
