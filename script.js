@@ -71,12 +71,12 @@
         ],
         title: 'Smart Attendance Management System',
         tags: ['HTML', 'CSS', 'JavaScript', 'LocalStorage', 'Python', 'Flask', 'SQLite', 'QR Code Library', 'Werkzeug Security'],
-        desc: 'A modern and secure attendance management web application buit using Python Flask, SQLite, HTML, CSS and Javascript.  The system provides role-based access for admin, Teacher, and Student users. Teacher can mark attendance using Normal Attendance, OTP Verification , and OR Code Verification, While students can view their attendance records and reports. The application also includes class management, student enrollment, attendance analytics, and secure authentication.',
+        desc: 'A modern and secure attendance management web application built using Python Flask, SQLite, HTML, CSS and Javascript.  The system provides role-based access for admin, Teacher, and Student users. Teacher can mark attendance using Normal Attendance, OTP Verification , and QR Code Verification, While students can view their attendance records and reports. The application also includes class management, student enrollment, attendance analytics, and secure authentication.',
         meta: [
-          { label: 'Type', val: 'attendance Management Web Application' },
+          { label: 'Type', val: 'ATTendance Management Web Application' },
           { label: 'Status', val: '✅ Completed' },
           { label: 'Duration', val: '15 Days' },
-          { label: 'Features', val: 'Admin Dashboard, Teacher & Student Management, Class Management, Student Enrollment, Normal Attendance, OTP Attendance, QR Code Attendance, ATTendance Reports, Attendaance Analytics, Secure Login System, Password Hashing, Role-Based Access Control, SQLite Database, OR Code Generation, Local Storage of Attendance Records' },
+          { label: 'Features', val: 'Admin Dashboard, Teacher & Student Management, Class Management, Student Enrollment, Normal Attendance, OTP Attendance, QR Code Attendance, ATTendance Reports, Attendance Analytics, Secure Login System, Password Hashing, Role-Based Access Control, SQLite Database, QR Code Generation, Local Storage of Attendance Records' },
         ],
         github: 'https://github.com/kanhaiyakumar10219-star/smart-attendance-system',
         live: 'https://smart-attendance-system-production-69ca.up.railway.app',
@@ -461,3 +461,26 @@ fetch('https://api.countapi.xyz/hit/kanhaiya-portfolio/visits')
     document.getElementById('visitorCount').innerText = data.value;
   })
   .catch(err => console.log(err));
+
+  // ===== SKILL FILTER =====
+const filterBtns = document.querySelectorAll('.skill-filter-btn');
+const skillItems = document.querySelectorAll('.skill-item');
+
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    const filter = btn.getAttribute('data-filter');
+
+    skillItems.forEach(item => {
+      const category = item.getAttribute('data-category');
+
+      if (filter === 'all' || category.includes(filter)) {
+        item.classList.remove('hide');
+      } else {
+        item.classList.add('hide');
+      }
+    });
+  });
+});
